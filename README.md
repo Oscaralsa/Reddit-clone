@@ -1,1 +1,1 @@
-# Instagram clone
+# Reddit clone
