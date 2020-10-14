@@ -8,7 +8,7 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
-func Insert(u models.User) (string, bool, error) {
+func InsertUser(u models.User) (string, bool, error) {
 
 	//Set a timeout of 15 seconds
 	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)

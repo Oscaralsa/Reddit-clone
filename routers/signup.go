@@ -39,7 +39,7 @@ func Signup(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	_, status, err := db.Insert(t)
+	_, status, err := db.InsertUser(t)
 
 	if err != nil {
 		http.Error(w, "SERVER_ERROR "+err.Error(), 400)
