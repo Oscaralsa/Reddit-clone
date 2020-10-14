@@ -23,7 +23,6 @@ func InsertUser(u models.User) (string, bool, error) {
 
 	//Insert the user
 	result, err := col.InsertOne(ctx, u)
-
 	if err != nil {
 		return "", false, err
 	}

@@ -13,12 +13,12 @@ import (
 func CreateJWT(t models.User) (string, error) {
 
 	//Load .env vars
-	var err = godotenv.Load()
-	if err != nil {
+	var errEnv = godotenv.Load()
+	if errEnv != nil {
 		log.Fatal("Error loading .env file")
 	}
 
-	secretPassword := []byte(os.Getenv("JWT_PASSWORD"))
+	secretPassword := []byte(os.Getenv("SECRET_KEY"))
 
 	payload := jwt.MapClaims{
 		"email":      t.Email,

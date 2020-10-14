@@ -2,6 +2,7 @@ package routers
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 
 	"github.com/Oscaralsa/Reddit-clone/db"
@@ -13,6 +14,8 @@ func Signup(w http.ResponseWriter, r *http.Request) {
 	//Get the data
 	var t models.User
 	err := json.NewDecoder(r.Body).Decode(&t)
+
+	fmt.Println(t)
 
 	if err != nil {
 		http.Error(w, "DATA_ERROR_RECIEVED "+err.Error(), 400)
