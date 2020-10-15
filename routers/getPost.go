@@ -31,6 +31,7 @@ func GetPostProfile(w http.ResponseWriter, r *http.Request) {
 	response, correct := db.SearchPost(ID, pag)
 	if correct == false {
 		http.Error(w, "SERVER_ERROR "+err.Error(), http.StatusBadRequest)
+		return
 	}
 
 	w.Header().Set("Content-type", "application/json")
