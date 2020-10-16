@@ -2,7 +2,7 @@ package routers
 
 import (
 	"errors"
-	"log"
+	"fmt"
 	"os"
 	"strings"
 
@@ -21,7 +21,7 @@ func TokenProcess(tk string) (*models.Claim, bool, string, error) {
 	//Load .env vars
 	var errEnv = godotenv.Load()
 	if errEnv != nil {
-		log.Fatal("Error loading .env file")
+		fmt.Println("Error loading .env file")
 	}
 
 	secretPassword := []byte(os.Getenv("SECRET_KEY"))

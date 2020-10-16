@@ -1,7 +1,7 @@
 package jwt
 
 import (
-	"log"
+	"fmt"
 	"os"
 	"time"
 
@@ -15,7 +15,7 @@ func CreateJWT(t models.User) (string, error) {
 	//Load .env vars
 	var errEnv = godotenv.Load()
 	if errEnv != nil {
-		log.Fatal("Error loading .env file")
+		fmt.Println("Error loading .env file")
 	}
 
 	secretPassword := []byte(os.Getenv("SECRET_KEY"))
@@ -27,6 +27,7 @@ func CreateJWT(t models.User) (string, error) {
 		"birth_date": t.BirthDate,
 		"biography":  t.Biography,
 		"ubication":  t.Ubication,
+		"avatar":     t.Avatar,
 		"web_url":    t.Web_Url,
 		"_id":        t.ID.Hex(),
 		"exp":        time.Now().Add(time.Hour * 24).Unix(),

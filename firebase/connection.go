@@ -2,6 +2,7 @@ package firebase
 
 import (
 	"context"
+	"fmt"
 	"log"
 	"os"
 
@@ -24,12 +25,12 @@ func ConnectStorage() *storage.Client {
 	app, err := firebase.NewApp(context.Background(), config, opt)
 
 	if err != nil {
-		log.Fatalln(err)
+		fmt.Println(err)
 	}
 
 	client, err := app.Storage(context.Background())
 	if err != nil {
-		log.Fatalln(err)
+		fmt.Println(err)
 	}
 
 	log.Printf("Firebase connection succesful")

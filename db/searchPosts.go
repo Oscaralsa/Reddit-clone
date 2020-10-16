@@ -2,7 +2,7 @@ package db
 
 import (
 	"context"
-	"log"
+	"fmt"
 	"time"
 
 	"github.com/Oscaralsa/Reddit-clone/models"
@@ -35,7 +35,7 @@ func SearchPost(ID string, page int64) ([]*models.PostReturn, bool) {
 	//Find all by ID and cursor
 	cursor, err := col.Find(ctx, condition, option)
 	if err != nil {
-		log.Fatal(err.Error())
+		fmt.Println(err.Error())
 		return results, false
 	}
 	for cursor.Next(context.TODO()) {
