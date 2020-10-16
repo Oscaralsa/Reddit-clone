@@ -13,5 +13,6 @@ func main() {
 		log.Fatal("No connection to database")
 		return
 	}
+
 	handlers.Handlers()
 }

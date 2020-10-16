@@ -21,9 +21,12 @@ func SetUser(u models.User, ID string) (bool, error) {
 
 	//Create user to modify
 	user := make(map[string]interface{})
-
+	dateBase, _ := time.Parse(time.RFC3339, "0001-01-01 00:00:00 +0000 UTC")
 	//Set user to modify by the user given
-	user["birth_date"] = u.BirthDate
+
+	if u.BirthDate != dateBase {
+		user["birth_date"] = u.BirthDate
+	}
 	if len(u.First_Name) > 0 {
 		user["first_name"] = u.First_Name
 	}
