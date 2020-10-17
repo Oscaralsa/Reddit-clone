@@ -16,7 +16,7 @@ func DeletePost(ID string, UserID string) error {
 
 	//Insert into Reddit-Clone database to the collection users
 	db := MongoCN.Database("Reddit-Clone")
-	col := db.Collection("posts")
+	col := db.Collection("post")
 
 	//Convert ID
 	objID, _ := primitive.ObjectIDFromHex(ID)

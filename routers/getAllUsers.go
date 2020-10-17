@@ -24,7 +24,7 @@ func GetAllUsers(w http.ResponseWriter, r *http.Request) {
 
 	result, status := db.SearchAllUsers(IDUser, pag, search, typeUser)
 	if status == false {
-		http.Error(w, "SERVER_ERROR "+err.Error(), http.StatusBadRequest)
+		http.Error(w, "SERVER_ERROR "+err.Error(), http.StatusInternalServerError)
 		return
 	}
 

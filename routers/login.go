@@ -32,7 +32,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 
 	jwtKey, err := jwt.CreateJWT(doc)
 	if err != nil {
-		http.Error(w, "SERVER_ERROR"+err.Error(), 400)
+		http.Error(w, "SERVER_ERROR"+err.Error(), http.StatusInternalServerError)
 		return
 	}
 

@@ -17,7 +17,7 @@ func GetProfile(w http.ResponseWriter, r *http.Request) {
 
 	profile, err := db.SearchProfile(ID)
 	if err != nil {
-		http.Error(w, "SERVER_ERROR "+err.Error(), 400)
+		http.Error(w, "SERVER_ERROR "+err.Error(), http.StatusInternalServerError)
 	} else {
 		w.Header().Set("context-type", "application/json")
 		w.WriteHeader(http.StatusOK)

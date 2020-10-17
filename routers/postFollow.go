@@ -20,7 +20,7 @@ func PostFollow(w http.ResponseWriter, r *http.Request) {
 
 	status, err := db.InsertFollow(t)
 	if err != nil || status == false {
-		http.Error(w, "SERVER_ERROR "+err.Error(), http.StatusBadRequest)
+		http.Error(w, "SERVER_ERROR "+err.Error(), http.StatusInternalServerError)
 		return
 	}
 

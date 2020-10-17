@@ -40,7 +40,7 @@ func UploadAvatar(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if err := wc.Close(); err != nil {
-		http.Error(w, "SERVER_ERROR"+err.Error(), 400)
+		http.Error(w, "SERVER_ERROR"+err.Error(), http.StatusInternalServerError)
 	}
 
 	var user models.User

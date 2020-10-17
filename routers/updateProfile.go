@@ -22,12 +22,12 @@ func UpdateProfile(w http.ResponseWriter, r *http.Request) {
 
 	status, err = db.SetUser(t, IDUser)
 	if err != nil {
-		http.Error(w, "SERVER_ERROR"+err.Error(), 400)
+		http.Error(w, "SERVER_ERROR"+err.Error(), http.StatusInternalServerError)
 		return
 	}
 
 	if status == false {
-		http.Error(w, "SERVER_ERROR_1", 400)
+		http.Error(w, "SERVER_ERROR_1", http.StatusInternalServerError)
 		return
 	}
 

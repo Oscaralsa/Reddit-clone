@@ -17,7 +17,7 @@ func InsertPost(t models.Post) (string, bool, error) {
 
 	//Insert into Reddit-Clone database to the collection users
 	db := MongoCN.Database("Reddit-Clone")
-	col := db.Collection("posts")
+	col := db.Collection("post")
 
 	record := bson.M{
 		"userId": t.UserId,

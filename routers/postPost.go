@@ -22,12 +22,12 @@ func PostPost(w http.ResponseWriter, r *http.Request) {
 	_, status, err := db.InsertPost(record)
 
 	if err != nil {
-		http.Error(w, "SERVER_ERROR "+err.Error(), 400)
+		http.Error(w, "SERVER_ERROR "+err.Error(), http.StatusInternalServerError)
 		return
 	}
 
 	if status == false {
-		http.Error(w, "POST_ERROR "+err.Error(), 400)
+		http.Error(w, "POST_ERROR "+err.Error(), http.StatusInternalServerError)
 		return
 	}
 

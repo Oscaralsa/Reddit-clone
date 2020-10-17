@@ -42,12 +42,12 @@ func Signup(w http.ResponseWriter, r *http.Request) {
 	_, status, err := db.InsertUser(t)
 
 	if err != nil {
-		http.Error(w, "SERVER_ERROR "+err.Error(), 400)
+		http.Error(w, "SERVER_ERROR "+err.Error(), http.StatusInternalServerError)
 		return
 	}
 
 	if status == false {
-		http.Error(w, "SERVER_ERROR1 "+err.Error(), 400)
+		http.Error(w, "SERVER_ERROR1 "+err.Error(), http.StatusInternalServerError)
 		return
 	}
 

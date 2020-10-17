@@ -18,7 +18,7 @@ func SearchPost(ID string, page int64) ([]*models.PostReturn, bool) {
 
 	//Insert into Reddit-Clone database to the collection users
 	db := MongoCN.Database("Reddit-Clone")
-	col := db.Collection("posts")
+	col := db.Collection("post")
 
 	var results []*models.PostReturn
 

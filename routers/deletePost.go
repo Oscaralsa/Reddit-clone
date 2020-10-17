@@ -15,7 +15,7 @@ func DeletePostProfile(w http.ResponseWriter, r *http.Request) {
 
 	err := db.DeletePost(ID, IDUser)
 	if err != nil {
-		http.Error(w, "SERVER_ERROR "+err.Error(), http.StatusBadRequest)
+		http.Error(w, "SERVER_ERROR "+err.Error(), http.StatusInternalServerError)
 		return
 	}
 

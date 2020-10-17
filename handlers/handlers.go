@@ -17,11 +17,14 @@ func Handlers() {
 
 	router.HandleFunc("/sign-up", middlewares.CheckDB(routers.Signup)).Methods("POST")
 	router.HandleFunc("/login", middlewares.CheckDB(routers.Login)).Methods("POST")
+
 	router.HandleFunc("/profile", middlewares.CheckDB(middlewares.CheckJWT(routers.GetProfile))).Methods("GET")
 	router.HandleFunc("/profile", middlewares.CheckDB(middlewares.CheckJWT(routers.UpdateProfile))).Methods("PUT")
+
 	router.HandleFunc("/post", middlewares.CheckDB(middlewares.CheckJWT(routers.PostPost))).Methods("POST")
 	router.HandleFunc("/post-profile", middlewares.CheckDB(middlewares.CheckJWT(routers.GetPostProfile))).Methods("GET")
 	router.HandleFunc("/post-profile", middlewares.CheckDB(middlewares.CheckJWT(routers.DeletePostProfile))).Methods("DELETE")
+	router.HandleFunc("/post-follow", middlewares.CheckDB(middlewares.CheckJWT(routers.GetFollowPost))).Methods("GET")
 
 	//Upload files
 	router.HandleFunc("/avatar", middlewares.CheckDB(middlewares.CheckJWT(routers.UploadAvatar))).Methods("POST")
