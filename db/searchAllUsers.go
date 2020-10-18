@@ -28,7 +28,7 @@ func SearchAllUsers(ID string, page int64, search string, typeUser string) ([]*m
 
 	//?i : lowercase or uppercase
 	query := bson.M{
-		"first_name": bson.M{"$regex": `(?i)` + search},
+		"nser_Name": bson.M{"$regex": `(?i)` + search},
 	}
 	//Search by cursor
 	cur, err := col.Find(ctx, query, findOptions)

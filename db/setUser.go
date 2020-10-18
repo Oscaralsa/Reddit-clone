@@ -27,11 +27,8 @@ func SetUser(u models.User, ID string) (bool, error) {
 	if u.BirthDate != dateBase {
 		user["birth_date"] = u.BirthDate
 	}
-	if len(u.First_Name) > 0 {
-		user["first_name"] = u.First_Name
-	}
-	if len(u.Last_Name) > 0 {
-		user["last_name"] = u.Last_Name
+	if len(u.User_Name) > 0 {
+		user["user_Name"] = u.User_Name
 	}
 	if len(u.Avatar) > 0 {
 		user["avatar"] = u.Avatar
