@@ -3,3 +3,9 @@ export interface Route {
   exact: boolean,
   page: () => JSX.Element
 }
+
+export interface ISignUpData {
+  user_name: string;
+  email: string;
+  password: string;
+}

@@ -9,9 +9,17 @@ import "./Home.scss";
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
   const [contentModal, setContentModal] = useState(null);
+  const [showTitleModal, setShowTitleModal] = useState(false);
+  const [titleModal, setTitleModal] = useState(<></>);
+  const [showFooterModal, setShowFooterModal] = useState(false);
+  const [footerModal, setFooterModal] = useState(<></>);
 
   const handleModal = (content: any) => {
     setShowModal(!showModal);
+    setShowTitleModal(false)
+    setTitleModal(<></>)
+    setShowFooterModal(false)
+    setFooterModal(<></>)
     setContentModal(content);
   };
 
@@ -20,11 +28,28 @@ export default function Home() {
       <Button
         type="submit"
         variant="primary"
-        onClick={() => handleModal(<SignUpForm setShowModal={setShowModal} />)}
+        onClick={() =>
+          handleModal(
+            <SignUpForm
+              setShowModal={setShowModal}
+              setTitleModal={setTitleModal}
+              setFooterModal={setFooterModal}
+              setShowFooterModal={setShowFooterModal}
+              setShowTitleModal={setShowTitleModal}
+            />
+          )
+        }
       >
         Primary
       </Button>
-      <BasicModal show={showModal} setShow={setShowModal}>
+      <BasicModal
+        show={showModal}
+        setShow={setShowModal}
+        titleModal={titleModal}
+        footerModal={footerModal}
+        showFooterModal={showFooterModal}
+        showTitleModal={showTitleModal}
+      >
         {contentModal}
       </BasicModal>
     </>

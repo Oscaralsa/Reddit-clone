@@ -5,6 +5,32 @@
   margin-left: 0px;
 }
 
+.modal-title {
+
+  h3 {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+  }
+
+  p {
+    font-family: Noto Sans,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    margin-top: 0%;
+    margin-bottom: 0%;
+  }
+}
+
+.modalfooter {
+
+  border-top: none;
+  padding: 0.25rem;
+  margin: 0%;
+
+}
+
 .sign-up-form {
   &__left{
     overflow: hidden;
@@ -35,7 +61,7 @@
       background-color: #fcfcfb;
       
       font-family: Noto Sans,sans-serif;
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 600;
 
       &:active{
@@ -125,4 +151,59 @@
     }
     
   }
+
+  &__sug{ 
+    padding-top: 30px;
+
+    p {
+      font-family: Noto Sans,sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+
+    a {
+      font-family: IBMPlexSans,sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      display: block;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__final{
+    overflow: hidden;
+    padding-top: 35px;
+    padding-left: 36px !important;
+
+    input.form-control,
+    textarea.form-control {
+      width: 85%;
+      height: 45px;
+      border-radius: 4px;
+      background-color: #fcfcfb;
+      
+      font-family: Noto Sans,sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+
+      margin-bottom: 23px;
+
+      &:active{
+        border-color: #24a0ed;
+        background-color: #fff;
+      }
+
+      &:hover{
+        border-color: rgba(0,0,0,.2);
+        background-color: #fff;
+      }
+    }
+
+    padding-bottom: 38%;
+  }
 }
+
