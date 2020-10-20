@@ -11,7 +11,6 @@ import (
 )
 
 func Login(w http.ResponseWriter, r *http.Request) {
-	w.Header().Add("content-type", "application/json")
 
 	var t models.User
 
@@ -20,13 +19,13 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "INCORRECT_USER_OR_PASSWORD "+err.Error(), 400)
 		return
 	}
-	if len(t.Email) == 0 {
-		http.Error(w, "EMAIL_REQUIRED", 400)
+	if len(t.User_Name) == 0 {
+		http.Error(w, "USERNAME_REQUIRED", 400)
 		return
 	}
-	doc, exists := db.Login(t.Email, t.Password)
+	doc, exists := db.Login("", t.User_Name, t.Password)
 	if exists == false {
-		http.Error(w, "INCORRECT_USER_OR_PASSWORD", 400)
+		http.Error(w, "INCORRECT_USER_OR_PASSWORD 1", 400)
 		return
 	}
 
@@ -41,7 +40,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(http.StatusCreated)
+	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(resp)
 
 	expirationTime := time.Now().Add(24 * time.Hour)

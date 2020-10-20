@@ -1,6 +1,6 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
-import { IBasicFormProps } from "../../../interfaces/posps_interfaces";
+import { IBasicFormProps } from "../../../interfaces/props_interfaces";
 
 import "./BasicModal.scss";
 

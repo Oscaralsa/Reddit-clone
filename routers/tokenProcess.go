@@ -39,7 +39,7 @@ func TokenProcess(tk string) (*models.Claim, bool, string, error) {
 	})
 
 	if err == nil {
-		_, found, _ := db.CheckUserExist(claims.Email)
+		_, found, _, _ := db.CheckUserExist(claims.Email, "")
 		if found == true {
 			Email = claims.Email
 			IDUser = claims.ID.Hex()

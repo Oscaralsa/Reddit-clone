@@ -2,6 +2,7 @@ package routers
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 
 	"github.com/Oscaralsa/Reddit-clone/db"
@@ -32,10 +33,15 @@ func Signup(w http.ResponseWriter, r *http.Request) {
 	}
 
 	//Check if user exists
-	_, exist, _ := db.CheckUserExist(t.Email)
+	_, exist, IDUserName, IDEmail := db.CheckUserExist(t.Email, t.User_Name)
 
-	if exist == true {
+	fmt.Println(exist, IDUserName, IDEmail)
+	if exist == true && IDUserName == "" {
 		http.Error(w, "USER_EXISTS", 400)
+		return
+	}
+	if exist == true && IDEmail == "" {
+		http.Error(w, "EMAIL_EXISTS", 400)
 		return
 	}
 

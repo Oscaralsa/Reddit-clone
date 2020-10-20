@@ -1,9 +1,9 @@
-import { ISignUpData } from "./global_interfaces";
+import { ILoginData, ISignUpData } from "./global_interfaces";
 
 export interface IBasicFormProps {
   show: boolean;
   setShow: React.Dispatch<React.SetStateAction<boolean>>;
-  children: any;
+  children: JSX.Element;
   showTitleModal: boolean;
   titleModal: JSX.Element;
   footerModal: JSX.Element;
@@ -16,13 +16,24 @@ export interface ISignUpFormProps {
   setFooterModal: React.Dispatch<React.SetStateAction<JSX.Element>>;
   setShowFooterModal: React.Dispatch<React.SetStateAction<boolean>>;
   setShowTitleModal: React.Dispatch<React.SetStateAction<boolean>>;
+  signUpType: boolean;
+  setRefreshCheckLogin: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export interface ISignUpFormRightProps {
+export interface ILoginFormProps {
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export interface ISignFormRightProps {
   onSubmit: (e: any) => void;
   showFinalStep: boolean;
   setSignUpData: React.Dispatch<React.SetStateAction<ISignUpData>>;
   signUpData: ISignUpData;
+  loginData: ILoginData;
+  setLoginData: React.Dispatch<React.SetStateAction<ILoginData>>;
+  signUpType: boolean;
+  onSubmitLogin: (e: any) => void;
+  setSignUpType: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export interface IBasicModalFooterProps {
@@ -34,6 +45,14 @@ export interface IFirstSignUpProps {
   onSubmit: (e: any) => void;
   setSignUpData: React.Dispatch<React.SetStateAction<ISignUpData>>;
   signUpData: ISignUpData;
+  setSignUpType: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export interface ILoginProps {
+  onSubmit: (e: any) => void;
+  setLoginData: React.Dispatch<React.SetStateAction<ILoginData>>;
+  loginData: ILoginData;
+  setSignUpType: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export interface IFinalSignUpProps {
