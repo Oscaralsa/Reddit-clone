@@ -1,0 +1,27 @@
+@import "../../scss/index.scss";
+
+.nav-bar{
+
+  padding: .1rem 1rem !important;
+  background-color: white !important;
+  border-bottom: 1px solid #dee2e6;
+
+  &__search {
+
+    .form-control {
+      
+    }
+  }
+
+  &__logo{
+    
+  }
+
+  h4{
+    margin-left: 6%;
+  }
+}
+
+.navbar-brand{
+  display: inline-flex !important;
+}

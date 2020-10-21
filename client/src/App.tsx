@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Home from "./pages/Home";
 import { AuthContext } from "./utils/context";
 import { isUserLogged } from "./api/auth";
+import Routing from "./routes/Routing";
 
 export default function App() {
   const [user, setUser] = useState("");
@@ -18,7 +19,7 @@ export default function App() {
 
   return (  
     <AuthContext.Provider value={user}>
-      {user ? <h1>Estás loggeado</h1> : <Home setRefreshCheckLogin={setRefreshCheckLogin}/>}
+      {user ? <Routing /> : <Home setRefreshCheckLogin={setRefreshCheckLogin}/>}
     </AuthContext.Provider>
   );
 }

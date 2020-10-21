@@ -25,8 +25,8 @@ export default function SignForm(props: ISignUpFormProps) {
     setRefreshCheckLogin
   } = props;
 
-  const [signUpType, setSignUpType] = useState(props.signUpType);
-  const [showFinalStep, setShowFinalStep] = useState(false);
+  const [signUpType, setSignUpType] = useState<boolean>(props.signUpType);
+  const [showFinalStep, setShowFinalStep] = useState<boolean>(false);
   const [signUpData, setSignUpData] = useState<ISignUpData>({
     user_name: "",
     email: "",
@@ -275,30 +275,11 @@ function FinalSignUp(props: IFinalSignUpProps) {
 
       <Col className="sign-up-form__sug" xs={5}>
         <p>Here are some username suggestions</p>
-        <a href="/#"onClick={() => setSignUpData({ ...signUpData, user_name: "The_best123" })}>The_best123</a>
-        <a href="/#"onClick={() => setSignUpData({ ...signUpData, user_name: "Test123" })}>Test123</a>
-        <a
-          href="/#"
-          onClick={() => setSignUpData({ ...signUpData, user_name: "Prox123" })}
-        >
-          Prox123
-        </a>
-        <a
-          href="/#"
-          onClick={() =>
-            setSignUpData({ ...signUpData, user_name: "Turtle123" })
-          }
-        >
-          Turtle123
-        </a>
-        <a
-          href="/#"
-          onClick={() =>
-            setSignUpData({ ...signUpData, user_name: "Skylinep" })
-          }
-        >
-          Skylinep
-        </a>
+        <a href="/#" onClick={() => setSignUpData({ ...signUpData, user_name: "The_best123" })}>The_best123</a>
+        <a href="/#" onClick={() => setSignUpData({ ...signUpData, user_name: "Test123" })}>Test123</a>
+        <a href="/#" onClick={() => setSignUpData({ ...signUpData, user_name: "Prox123" })}>Prox123</a>
+        <a href="/#" onClick={() => setSignUpData({ ...signUpData, user_name: "Turtle123" })}>Turtle123</a>
+        <a href="/#" onClick={() => setSignUpData({ ...signUpData, user_name: "Skylinep" })}>Skylinep</a>
       </Col>
     </>
   );
