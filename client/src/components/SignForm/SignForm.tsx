@@ -2,10 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Row, Col, Form, Button, FormControl } from "react-bootstrap";
 import GoogleLogo from "../../assets/images/google-logo.png";
 import AppleLogo from "../../assets/images/apple-logo.png";
+import { AnyAction, bindActionCreators, Dispatch } from 'redux';
+import { connect } from 'react-redux';
 
 import "./SignForm.scss";
 import { ISignUpData, ILoginData } from "../../interfaces/global_interfaces";
-import { signUpApi, loginApi, setTokenApi } from "../../api/auth";
+import { signUpApi, loginApi, setTokenApi, getUserData } from "../../api/auth";
+import { setUser } from "../../actions/authAction"
 import {
   ISignUpFormProps,
   ISignFormRightProps,
@@ -15,14 +18,14 @@ import {
   ILoginProps,
 } from "../../interfaces/props_interfaces";
 
-export default function SignForm(props: ISignUpFormProps) {
+function SignForm(props: ISignUpFormProps) {
   const {
     setShowModal,
     setTitleModal,
     setFooterModal,
     setShowFooterModal,
     setShowTitleModal,
-    setRefreshCheckLogin
+    setUser
   } = props;
 
   const [signUpType, setSignUpType] = useState<boolean>(props.signUpType);
@@ -59,9 +62,9 @@ export default function SignForm(props: ISignUpFormProps) {
       signUpData.password.length >= 6
     ) {
       const response = await signUpApi(signUpData);
-      console.log(response);
-
+      setUser(getUserData(response), response)
       setShowModal(false);
+      
     }
   };
 
@@ -88,7 +91,7 @@ export default function SignForm(props: ISignUpFormProps) {
 
       if(response.token) {
         setTokenApi(response.token)
-        setRefreshCheckLogin(true)
+        window.location.reload();
         setShowModal(false);
       };
     }
@@ -410,3 +413,12 @@ function ModalFooter(props: IBasicModalFooterProps) {
     </>
   );
 }
+
+const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) => bindActionCreators(
+  {
+    setUser: setUser
+  },
+  dispatch,
+);
+
+export default connect(null, mapDispatchToProps)(SignForm);

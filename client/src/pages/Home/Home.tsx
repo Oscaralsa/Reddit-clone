@@ -6,12 +6,11 @@ import SignForm from "../../components/SignForm";
 
 import BasicLayout from "../../layouts/BasicLayout";
 
+import { connect } from 'react-redux';
+
 import "./Home.scss";
 
-export default function Home(props: {
-  setRefreshCheckLogin: React.Dispatch<React.SetStateAction<boolean>>;
-}) {
-  const { setRefreshCheckLogin } = props;
+function Home(props: any) {
 
   const [showModal, setShowModal] = useState(false);
   const [contentModal, setContentModal] = useState(<></>);
@@ -29,6 +28,10 @@ export default function Home(props: {
     setContentModal(content);
   };
 
+  console.log(props)
+  if(props.user.user_name){
+    console.log("Logeado")
+  }
   return (
     <BasicLayout>
       <>
@@ -44,7 +47,6 @@ export default function Home(props: {
                 setShowFooterModal={setShowFooterModal}
                 setShowTitleModal={setShowTitleModal}
                 signUpType={true}
-                setRefreshCheckLogin={setRefreshCheckLogin}
               />
             )
           }
@@ -63,7 +65,6 @@ export default function Home(props: {
                 setShowFooterModal={setShowFooterModal}
                 setShowTitleModal={setShowTitleModal}
                 signUpType={false}
-                setRefreshCheckLogin={setRefreshCheckLogin}
               />
             )
           }
@@ -84,3 +85,11 @@ export default function Home(props: {
     </BasicLayout>
   );
 }
+
+const mapStateToProps = (state: { user: any; token: string }, props: any) => ({
+  ...props,
+  user: state.user,
+  token: state.token
+});
+
+export default connect(mapStateToProps)(Home)

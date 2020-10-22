@@ -12,4 +12,10 @@ export default [
     exact: true,
     page: Error404
   }
+  ,
+  {
+    path: "/error",
+    exact: true,
+    page: Error404
+  }
 ]

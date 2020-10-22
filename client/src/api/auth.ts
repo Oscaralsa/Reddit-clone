@@ -68,16 +68,16 @@ export function logoutApi() {
   localStorage.removeItem("token");
 }
 
-export function isUserLogged(): string {
+export function isUserLogged(): {} {
   const token = getTokenApi();
 
   if(!token){
     logoutApi();
-    return "";
+    return {};
   }
   if(isExpired(token)) logoutApi()
 
-  return jwtDecode(token)
+  return getUserData(token)
 }
 
 function isExpired(token: string) {
@@ -91,4 +91,10 @@ function isExpired(token: string) {
 
   return false;
 
+}
+
+export function getUserData(token: (string) ){
+  const { user_name, email, avatar, biography } = jwtDecode(token);
+
+  return { user_name, email, avatar, biography };
 }

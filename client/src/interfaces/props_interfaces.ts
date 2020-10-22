@@ -17,7 +17,13 @@ export interface ISignUpFormProps {
   setShowFooterModal: React.Dispatch<React.SetStateAction<boolean>>;
   setShowTitleModal: React.Dispatch<React.SetStateAction<boolean>>;
   signUpType: boolean;
-  setRefreshCheckLogin: React.Dispatch<React.SetStateAction<boolean>>;
+  setUser: (user: any, token: any) => {
+    type: string;
+    payload: {
+        user: any;
+        token: any;
+    };
+};
 }
 
 export interface ILoginFormProps {

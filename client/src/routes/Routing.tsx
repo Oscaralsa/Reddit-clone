@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { map } from "lodash"
+import { connect } from 'react-redux';
+import { AnyAction, bindActionCreators, Dispatch } from 'redux';
 
 import configRouting from "./configRouting"
-// eslint-disable-next-line
-import { Route as route } from "../interfaces/global_interfaces"
+import { setUser } from "../actions/authAction"
+import { isUserLogged, getTokenApi, logoutApi } from "../api/auth";
 
-export default function Routing() {
+// eslint-disable-next-line
+import { Route as route, ISetUser } from "../interfaces/global_interfaces"
+
+function Routing({ setUser }: ISetUser) {
+  useEffect(()=> {
+      if (isUserLogged()){
+        setUser(isUserLogged(), getTokenApi()!);
+      } else {
+        logoutApi()
+        setUser(null, getTokenApi()!);
+      }
+  }, [setUser])
+
   return(
     <Router>
       <Switch>
@@ -21,3 +35,12 @@ export default function Routing() {
     </Router>
   )
 }
+
+const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) => bindActionCreators(
+  {
+    setUser: setUser
+  },
+  dispatch,
+);
+
+export default connect(null, mapDispatchToProps)(Routing);

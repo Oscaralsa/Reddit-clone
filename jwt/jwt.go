@@ -22,7 +22,7 @@ func CreateJWT(t models.User) (string, error) {
 
 	payload := jwt.MapClaims{
 		"email":      t.Email,
-		"user_Name":  t.User_Name,
+		"user_name":  t.User_Name,
 		"birth_date": t.BirthDate,
 		"biography":  t.Biography,
 		"ubication":  t.Ubication,
