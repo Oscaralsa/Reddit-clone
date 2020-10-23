@@ -1,5 +1,6 @@
 import { SET_USER } from './actionTypes';
 import { logoutApi, getTokenApi, getUserData } from "../api/auth";
+import { userState } from "../reducers/initialState"
 
 export const setUser = (user: any, token: any) => ({
   type: SET_USER,
@@ -12,5 +13,5 @@ export const login = () => async (dispatch: (arg0: { type: string; payload: any;
 
 export const logout = () => (dispatch: (arg0: { type: string; payload: any; }) => void) => {
   logoutApi()
-  dispatch(setUser(null, getTokenApi()));
+  dispatch(setUser(userState, getTokenApi()));
 };

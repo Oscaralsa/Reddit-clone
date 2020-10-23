@@ -1,10 +1,12 @@
+export const userState = {
+  user_name: undefined,
+  email: undefined,
+  avatar: "",
+  biography: "",
+}
+
 const initialState = {
-  user: {
-    user_name: undefined,
-    email: undefined,
-    avatar: "",
-    biography: "",
-  },
+  user: userState,
   token: localStorage.getItem('token') || null,
 };
 
