@@ -1,5 +1,10 @@
 @import "../../scss/index.scss";
 
 .basic-layout {
-  background-color: $primary-gray;
+  background-color: $backgroung-default;
+  
+  &__body{
+    margin-top: 1.2%;
+  }
+  
 }

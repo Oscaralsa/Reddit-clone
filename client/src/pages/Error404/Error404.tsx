@@ -7,6 +7,7 @@ export default function Error404(){
   return(
     <BasicLayout>
       <h2>Error 404</h2>
+      <h2>Error 404</h2>
     </BasicLayout>
   )
 }

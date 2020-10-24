@@ -1,0 +1,63 @@
+@import "../../../scss/index.scss";
+
+.card-premium {
+  width: 95%;
+  .col-6 {
+    padding-left: 2%;
+    padding-right: 4%;
+  }
+  .col-3 {
+    padding-left: 0%;
+    padding-right: 2%;
+  }
+  .card-body {
+    padding: 0.1rem;
+  }
+
+  &__logo {
+    .col-2 {
+      padding-left: 10%;
+    }
+    img {
+      position: relative;
+      left: 50%;
+      top: 25%;
+      height: 30px;
+    }
+  }
+
+  &__body {
+    margin-top: 2%;
+    p {
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+
+    h6 {
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 400;
+    }
+  }
+
+  &__button {
+    .btn {
+      position: relative;
+      left: 0%;
+      top: 25%;
+      height: 30px;
+
+      width: 100%;
+      border: 1px solid transparent;
+      height: 28px;
+      padding: 0;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      line-height: 24px;
+      background-color: $primary;
+    }
+  }
+}

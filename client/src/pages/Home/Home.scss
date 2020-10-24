@@ -1,1 +1,11 @@
-@import "../../scss/index.scss"
+@import "../../scss/index.scss";
+
+.right-component {
+  
+}
+
+@media screen and (max-width: 950px) {
+  .right-component {
+    display: none;
+  } 
+}
