@@ -6,9 +6,9 @@
   .col-1 {
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
-    max-width: 6.5%;
-    padding-left: 1%;
-    padding-right: 3%;
+    max-width: 6%;
+    padding-left: 1.7%;
+    padding-right: 0;
   }
   .col-11 {
     border-top-right-radius: 4px;
@@ -16,7 +16,55 @@
   }
 
   &__left {
+    
+    .svg-inline--fa {
+      color: gray;
+    }
+
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    left: 0;
+    padding: 8px 4px 8px 0;
+    top: 0;
     background-color: $primary-gray-light;
+
+    &__buttons {
+      -ms-flex-align: center;
+      align-items: center;
+      display: -ms-flexbox;
+      display: flex;
+      fill: inherit;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      &__up {
+        height: 24px;
+        width: 24px;
+        display: inline-block;
+        overflow: hidden;
+        font-size: 16px;
+        line-height: 24px;
+      }
+      &__votes {
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px;
+        pointer-events: none;
+        position: relative;
+        align-items: center;
+        right: 18%;
+      }
+      &__down{
+        height: 24px;
+        width: 24px;
+        display: inline-block;
+        overflow: hidden;
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
   }
 
   &__body {
@@ -25,17 +73,23 @@
     h5 {
       margin-top: 1%;
     }
-    h4{
+    h4 {
       font-size: 14px;
       line-height: 16px;
       font-weight: 400;
     }
+    h6 {
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 400;
+    }
+
     &__header {
       display: flex;
       margin-top: 1%;
 
-      &__separator{
-        margin-left: .5%;
+      &__separator {
+        margin-left: 0.5%;
         font-size: 11px;
         line-height: 16px;
         font-weight: 400;
@@ -55,11 +109,54 @@
       }
     }
 
-    h6 {
-      font-size: 12px;
+    &__footer{
+      color: gray;
+      font-size: 13px;
+      font-weight: 700;
       line-height: 16px;
-      font-weight: 400;
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      height: 32px;
+      overflow: hidden;
+      flex-grow: 1;
+
+      
+
+    &__comments{
+      p{
+        width: 87px;
+        margin-bottom: 0.2rem;
+        position: relative;
+        bottom: 3px;
+        margin-left: 1.5%;
+      }
+      display: flex;
     }
+    &__others{
+      p{
+        width: 80px;
+        margin-bottom: 0.2rem;
+        position: relative;
+        bottom: 3px;
+        margin-left: 1.5%;
+      }
+      &__small{
+        display: flex;
+        p{
+          width: 45px;
+          margin-bottom: 0.2rem;
+          position: relative;
+          bottom: 3px;
+          margin-left: 2.5%;
+        }
+      }
+      display: flex;
+      margin-left: 2%;
+    }
+      
+    }
+
   }
 
   &__button {
