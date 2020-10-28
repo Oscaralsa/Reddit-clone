@@ -41,9 +41,15 @@ function RedditPost(props: any) {
           <h4>
             Here comes the textHere comes the textHere comes the textHere comes
             the textHere comes the textHere comes the textHere comes the
+            textHere comes the textHere comes the textHere comes the textHere comes the textHere comes
+            the textHere comes the textHere comes the textHere comes the
+            textHere comes the textHere comes the textHere comes the textHere comes the textHere comes
+            the textHere comes the textHere comes the textHere comes the
             textHere comes the text
           </h4>
 
+          <img src={RedditChar} alt="logo" />
+          
           <div className="card-post__body__footer">
             <div className="card-post__body__footer__comments">
               <FontAwesomeIcon icon={faComment} /><p>36 Comments</p>

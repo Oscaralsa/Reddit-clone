@@ -26,6 +26,7 @@ function LeftComponent() {
   return (
     <div className="left">
       <RedditPost />
+      <RedditPost />
     </div>
   );
 }
