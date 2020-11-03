@@ -20,9 +20,12 @@ func InsertPost(t models.Post) (string, bool, error) {
 	col := db.Collection("post")
 
 	record := bson.M{
-		"userId": t.UserId,
-		"body":   t.Body,
-		"date":   t.Date,
+		"userId":     t.UserId,
+		"title":      t.Title,
+		"body":       t.Body,
+		"date":       t.Date,
+		"likes":      t.Likes,
+		"multimedia": t.Multimedia,
 	}
 
 	result, err := col.InsertOne(ctx, record)

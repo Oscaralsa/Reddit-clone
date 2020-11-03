@@ -16,7 +16,7 @@ func DeleteFollow(w http.ResponseWriter, r *http.Request) {
 
 	var t models.Follow
 	t.UserId = IDUser
-	t.UserFollowId = ID
+	t.FollowId = ID
 
 	status, err := db.DeleteFollow(t)
 	if err != nil || status == false {

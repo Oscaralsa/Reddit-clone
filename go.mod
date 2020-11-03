@@ -8,6 +8,7 @@ require (
 	firebase.google.com/go v3.13.0+incompatible // indirect
 	firebase.google.com/go/v4 v4.0.0
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
+	github.com/google/uuid v1.1.2
 	github.com/gorilla/mux v1.8.0
 	github.com/joho/godotenv v1.3.0
 	github.com/rs/cors v1.7.0

@@ -30,7 +30,32 @@ func GetPostProfile(w http.ResponseWriter, r *http.Request) {
 	pag := int64(page)
 	response, correct := db.SearchPost(ID, pag)
 	if correct == false {
-		http.Error(w, "SERVER_ERROR "+err.Error(), http.StatusInternalServerError)
+		http.Error(w, "SERVER_ERROR", http.StatusInternalServerError)
+		return
+	}
+
+	w.Header().Set("Content-type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	json.NewEncoder(w).Encode(response)
+}
+
+func GetAllPost(w http.ResponseWriter, r *http.Request) {
+
+	if len(r.URL.Query().Get("page")) < 1 {
+		http.Error(w, "PAGE_MISSING", http.StatusBadRequest)
+		return
+	}
+
+	page, err := strconv.Atoi(r.URL.Query().Get("page"))
+	if err != nil {
+		http.Error(w, "PAGE_ERROR "+err.Error(), http.StatusBadRequest)
+		return
+	}
+
+	pag := int64(page)
+	response, correct := db.SearchAllPost(pag)
+	if correct == false {
+		http.Error(w, "SERVER_ERROR", http.StatusInternalServerError)
 		return
 	}
 

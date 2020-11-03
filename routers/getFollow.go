@@ -18,7 +18,7 @@ func GetOneFollow(w http.ResponseWriter, r *http.Request) {
 
 	var t models.Follow
 	t.UserId = IDUser
-	t.UserFollowId = ID
+	t.FollowId = ID
 
 	var response models.FollowReturn
 

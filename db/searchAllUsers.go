@@ -28,7 +28,7 @@ func SearchAllUsers(ID string, page int64, search string, typeUser string) ([]*m
 
 	//?i : lowercase or uppercase
 	query := bson.M{
-		"nser_Name": bson.M{"$regex": `(?i)` + search},
+		"user_name": bson.M{"$regex": `(?i)` + search},
 	}
 	//Search by cursor
 	cur, err := col.Find(ctx, query, findOptions)
@@ -49,7 +49,7 @@ func SearchAllUsers(ID string, page int64, search string, typeUser string) ([]*m
 
 		var r models.Follow
 		r.UserId = ID
-		r.UserFollowId = s.ID.Hex()
+		r.FollowId = s.ID.Hex()
 
 		include = false
 
@@ -63,7 +63,7 @@ func SearchAllUsers(ID string, page int64, search string, typeUser string) ([]*m
 			include = true
 		}
 
-		if r.UserFollowId == ID {
+		if r.FollowId == ID {
 			include = false
 		}
 

@@ -54,7 +54,7 @@
         pointer-events: none;
         position: relative;
         align-items: center;
-        right: 18%;
+        right: 17%;
       }
       &__down{
         height: 24px;
@@ -69,6 +69,14 @@
 
   &__body {
     background-color: $background-light;
+
+    &__image{
+      margin-top: 3%;
+      text-align: center;
+      img{
+        width: 80%;
+      }
+    }
 
     h5 {
       margin-top: 1%;
@@ -126,29 +134,29 @@
 
     &__comments{
       p{
-        width: 87px;
+        width: 86px;
         margin-bottom: 0.2rem;
         position: relative;
-        bottom: 3px;
+        bottom: 1px;
         margin-left: 1.5%;
       }
       display: flex;
     }
     &__others{
       p{
-        width: 80px;
+        width: 82px;
         margin-bottom: 0.2rem;
         position: relative;
-        bottom: 3px;
+        bottom: 1px;
         margin-left: 1.5%;
       }
       &__small{
         display: flex;
         p{
-          width: 45px;
+          width: 46px;
           margin-bottom: 0.2rem;
           position: relative;
-          bottom: 3px;
+          bottom: 1px;
           margin-left: 2.5%;
         }
       }

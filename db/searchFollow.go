@@ -20,8 +20,8 @@ func SearchFollow(t models.Follow) (bool, error) {
 	col := db.Collection("follow")
 
 	condition := bson.M{
-		"userId":       t.UserId,
-		"userFollowId": t.UserFollowId,
+		"userId":   t.UserId,
+		"followId": t.FollowId,
 	}
 
 	var result models.Follow

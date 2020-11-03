@@ -1,4 +1,4 @@
-import { ILoginData, ISignUpData } from "./global_interfaces";
+import { ILoginData, ISignUpData, IBasicPostData, IUserData } from "./global_interfaces";
 
 export interface IBasicFormProps {
   show: boolean;
@@ -64,4 +64,12 @@ export interface ILoginProps {
 export interface IFinalSignUpProps {
   signUpData: ISignUpData; 
   setSignUpData: React.Dispatch<React.SetStateAction<ISignUpData>>
+}
+
+export interface IRedditPostsProps {
+  post: IBasicPostData[]; 
+}
+
+export interface IRedditPostProps {
+  post: IBasicPostData; 
 }

@@ -1,32 +1,42 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { map } from "lodash";
 
+import { getAllPostApi } from "../../api/post";
 import BasicLayout from "../../layouts/BasicLayout";
 import RedditPremium from "../../components/Cards/RedditPremium";
 import RedditInfo from "../../components/Cards/RedditInfo";
-import RedditPost from "../../components/Cards/RedditPost"
+import RedditPost from "../../components/Cards/RedditPost";
 
 import { connect } from "react-redux";
 
 import "./Home.scss";
+import { IBasicPostData } from "../../interfaces/global_interfaces";
+import { IRedditPostsProps } from "../../interfaces/props_interfaces";
 
-function Home(props: any) {
-  console.log(props);
-  if (props.user.user_name) {
-    console.log("Logeado");
-  }
+function Home() {
+  const [post, setPost] = useState<IBasicPostData[]>([]);
+
+  useEffect(() => {
+    getAllPostApi(1).then((response) => {
+      setPost(response);
+    });
+  }, []);
+
   return (
     <BasicLayout>
-      <LeftComponent />
+      <LeftComponent post={post} />
       <RightComponent />
     </BasicLayout>
   );
 }
 
-function LeftComponent() {
+function LeftComponent(props: IRedditPostsProps) {
+  const { post } = props;
   return (
     <div className="left">
-      <RedditPost />
-      <RedditPost />
+      {map(post, (post: any, index: number) => {
+        return <RedditPost key={index} post={post} />;
+      })}
     </div>
   );
 }

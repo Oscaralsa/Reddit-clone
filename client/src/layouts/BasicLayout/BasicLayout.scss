@@ -3,6 +3,15 @@
 .basic-layout {
   background-color: $backgroung-default;
   
+  .col-5 {
+    flex: 0 0 44.666667%;
+    max-width: 44.666667%;
+}
+
+  .row{
+    margin-right: 0;
+  }
+
   &__body{
     margin-top: 1.2%;
   }

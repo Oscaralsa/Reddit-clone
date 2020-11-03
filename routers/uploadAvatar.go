@@ -15,7 +15,7 @@ import (
 )
 
 //Load .env vars
-var err = godotenv.Load()
+var err1 = godotenv.Load()
 
 func UploadAvatar(w http.ResponseWriter, r *http.Request) {
 
@@ -47,7 +47,7 @@ func UploadAvatar(w http.ResponseWriter, r *http.Request) {
 	var status bool
 
 	//Set user data with avatar
-	user.Avatar = "storage.googleapis.com/" + os.Getenv("BUCKET_NAME") + ".appspot.com/user/" + IDUser + "/avatar." + ext
+	user.Avatar = "http://storage.googleapis.com/" + os.Getenv("BUCKET_NAME") + ".appspot.com/user/" + IDUser + "/avatar." + ext
 	status, err = db.SetUser(user, IDUser)
 	if err != nil || status == false {
 		http.Error(w, "DATABASE_ERROR "+err.Error(), 400)

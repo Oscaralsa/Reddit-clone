@@ -26,7 +26,7 @@ func SearchFollowPost(ID string, page int) ([]models.PostFollow, bool) {
 	conditions = append(conditions, bson.M{
 		"$lookup": bson.M{
 			"from":         "post",
-			"localField":   "userFollowId",
+			"localField":   "followId",
 			"foreignField": "userId",
 			"as":           "post",
 		}})

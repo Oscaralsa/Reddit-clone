@@ -15,6 +15,28 @@ export interface ILoginData {
   password: string;
 }
 
+export interface IBasicPostData {
+  body: string;
+  date: string;
+  likes: number;
+  multimedia: string;
+  title: string;
+  userId: string;
+  _id: string;
+}
+
+export interface IUserData {
+  birth_date: string;
+  email: string;
+  _id: string;
+  ubication: string;
+  user_name: string;
+  avatar: string;
+  biography: string;
+  web_url: string;
+  banner: string;
+}
+
 export interface ISetUser {
   setUser: (user: any, token: string) => {
     type: string;
