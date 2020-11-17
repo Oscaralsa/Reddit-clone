@@ -85,11 +85,7 @@ function isExpired(token: string) {
   const expired = exp * 1000;
   const timeout = expired - Date.now();
 
-  if (timeout < 0){
-    return true;
-  }
-
-  return false;
+  return timeout < 0;
 
 }
 

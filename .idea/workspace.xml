@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="28933899-8cee-4861-bd5a-134679eb0e9d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/client/src/api/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/api/auth.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/checkUserExist.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/checkUserExist.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/connection.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/connection.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/deleteFollow.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/deleteFollow.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/deletePost.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/deletePost.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/encryptPassword.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/encryptPassword.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/insertFollow.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/insertFollow.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/insertPost.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/insertPost.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/insertUser.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/insertUser.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/login.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/login.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/searchAllUsers.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/searchAllUsers.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/searchFollow.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/searchFollow.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/searchFollowPost.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/searchFollowPost.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/searchPosts.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/searchPosts.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/searchProfile.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/searchProfile.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/setUser.go" beforeDir="false" afterPath="$PROJECT_DIR$/db/setUser.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firebase/connection.go" beforeDir="false" afterPath="$PROJECT_DIR$/firebase/connection.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers/handlers.go" beforeDir="false" afterPath="$PROJECT_DIR$/handlers/handlers.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jwt/jwt.go" beforeDir="false" afterPath="$PROJECT_DIR$/jwt/jwt.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/checkDB.go" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/checkDB.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/checkJWT.go" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/checkJWT.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/claim.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/claim.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/follow.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/follow.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/followReturn.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/followReturn.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/loginResponse.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/loginResponse.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/post.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/post.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/postFollow.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/postFollow.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/postReturn.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/postReturn.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/deleteFollow.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/deleteFollow.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/deletePost.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/deletePost.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/getAllUsers.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/getAllUsers.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/getFollow.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/getFollow.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/getFollowPost.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/getFollowPost.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/getPost.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/getPost.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/getProfile.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/getProfile.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/login.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/login.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/postFollow.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/postFollow.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/postPost.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/postPost.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/signup.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/signup.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/tokenProcess.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/tokenProcess.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/updateProfile.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/updateProfile.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routers/uploadAvatar.go" beforeDir="false" afterPath="$PROJECT_DIR$/routers/uploadAvatar.go" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GOROOT" path="C:\Go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="ProjectId" id="1kQtVUEaWOssXgC3WmrBYSQPoXg" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/main.go" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="E:\go\src\github.com\Oscaralsa\Reddit-clone\client\node_modules\typescript\lib" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="Reddit-clone" />
+      <working_directory value="$PROJECT_DIR$" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/../Reddit-clone|$PROJECT_DIR$/main.go" />
+      <package value="github.com/Oscaralsa/Reddit-clone" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
+      <module name="Reddit-clone" />
+      <working_directory value="$PROJECT_DIR$" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <package value="github.com/Oscaralsa/Reddit-clone" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="752" y="450" key="#GOROOT" timestamp="1605644689038">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="752" y="450" key="#GOROOT/0.0.1920.1040@0.0.1920.1040" timestamp="1605644689038" />
+    <state x="586" y="198" key="#Inspections" timestamp="1605645182330">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="586" y="198" key="#Inspections/0.0.1920.1040@0.0.1920.1040" timestamp="1605645182330" />
+    <state x="414" y="174" width="1092" height="755" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605644852681">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="174" width="1092" height="755" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605644852681" />
+    <state x="827" y="289" key="EnvironmentVariablesDialog" timestamp="1605644844958">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="827" y="289" key="EnvironmentVariablesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605644844958" />
+    <state x="740" y="294" key="FileChooserDialogImpl" timestamp="1605644832017">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="294" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1605644832017" />
+    <state width="1340" height="266" key="GridCell.Tab.0.bottom" timestamp="1605645087545">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605645087545" />
+    <state width="1340" height="266" key="GridCell.Tab.0.center" timestamp="1605645087545">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="266" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605645087545" />
+    <state width="1340" height="266" key="GridCell.Tab.0.left" timestamp="1605645087545">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="266" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605645087545" />
+    <state width="1340" height="266" key="GridCell.Tab.0.right" timestamp="1605645087545">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="266" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605645087545" />
+    <state width="1340" height="328" key="GridCell.Tab.1.bottom" timestamp="1605645021957">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="328" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605645021957" />
+    <state width="1340" height="328" key="GridCell.Tab.1.center" timestamp="1605645021957">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="328" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605645021957" />
+    <state width="1340" height="328" key="GridCell.Tab.1.left" timestamp="1605645021957">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="328" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605645021957" />
+    <state width="1340" height="328" key="GridCell.Tab.1.right" timestamp="1605645021957">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1340" height="328" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605645021957" />
+  </component>
+</project>
