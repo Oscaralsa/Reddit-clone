@@ -149,9 +149,7 @@
         flex-shrink: 1;
         margin: 0 8px;
         height: 4.5vh;
-        font-size: 12px;
         font-weight: 600;
-
       }
     }
     padding: 10px;
@@ -303,8 +301,7 @@
 }
 
 @media screen and (max-width: 500px) {
-  .input__section .input__section__left span,
-  .input__section > i {
+  .header__input__section{
     display: none;
   }
   
