@@ -93,7 +93,7 @@ function SignForm(props: ISignUpFormProps) {
         setTokenApi(response.token)
         window.location.reload();
         setShowModal(false);
-      };
+      }
     }
   };
 
@@ -119,9 +119,7 @@ function SignForm(props: ISignUpFormProps) {
 
 function LeftImageComponent() {
   return (
-    <Col className="sign-up-form__left" xs={2}>
-      {" "}
-    </Col>
+    <Col className="sign-up-form__left" xs={2} />
   );
 }
 
@@ -139,7 +137,7 @@ function RightComponent(props: ISignFormRightProps) {
   } = props;
   return signUpType ? (
     !showFinalStep ? (
-      <FisrtSignUp
+      <FistSignUp
         onSubmit={onSubmit}
         signUpData={signUpData}
         setSignUpData={setSignUpData}
@@ -158,7 +156,7 @@ function RightComponent(props: ISignFormRightProps) {
   );
 }
 
-function FisrtSignUp(props: IFirstSignUpProps) {
+function FistSignUp(props: IFirstSignUpProps) {
   const { onSubmit, signUpData, setSignUpData, setSignUpType } = props;
   return (
     <Col className="sign-up-form__right" xs={5}>
@@ -200,9 +198,9 @@ function FisrtSignUp(props: IFirstSignUpProps) {
       </div>
 
       <div className="sign-up-form__right__divider">
-        <span className="sign-up-form__right__divider__Line"></span>
+        <span className="sign-up-form__right__divider__Line"/>
         <span className="sign-up-form__right__divider__Text">OR</span>
-        <span className="sign-up-form__right__divider__Line"></span>
+        <span className="sign-up-form__right__divider__Line"/>
       </div>
 
       <Form onSubmit={onSubmit}>
@@ -330,9 +328,9 @@ function LoginComponent(props: ILoginProps) {
       </div>
 
       <div className="sign-up-form__right__divider">
-        <span className="sign-up-form__right__divider__Line"></span>
+        <span className="sign-up-form__right__divider__Line"/>
         <span className="sign-up-form__right__divider__Text">OR</span>
-        <span className="sign-up-form__right__divider__Line"></span>
+        <span className="sign-up-form__right__divider__Line"/>
       </div>
 
       <Form onSubmit={onSubmit}>

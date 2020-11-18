@@ -33,7 +33,7 @@
 
 .sign-up-form {
   &__left{
-    overflow: hidden;
+    width: 100%;
     min-height: 73vh;
     background-image: url("../../assets/images/saturn-modal.png");
     display: flex;
@@ -42,10 +42,6 @@
     background-repeat: no-repeat;
     background-size: cover;
 
-    div {
-      z-index: 1;
-      
-    }
   }
 
   &__right{
@@ -207,3 +203,26 @@
   }
 }
 
+@media screen and (max-width: 990px) {
+  .col-5{
+    width: 100% !important;
+    flex: 0 0 65.66667% !important;
+    max-width: 65.66667% !important;
+  }
+}
+
+@media screen and (max-width: 890px) {
+  .col-5{
+    width: 100% !important;
+    flex: 0 0 65.66667% !important;
+    max-width: 65.66667% !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .col-5{
+    width: 100% !important;
+    flex: 0 0 82.66667% !important;
+    max-width: 82.66667% !important;
+  }
+}
