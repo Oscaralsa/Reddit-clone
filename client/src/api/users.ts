@@ -1,5 +1,5 @@
 export async function getUsersPostApi(id: string) {
-  const url = `${process.env.REACT_APP_API_URL}/profile?id=${id}`
+  const url = `/api/profile?id=${id}`
   
   const params = {
     method: "GET",

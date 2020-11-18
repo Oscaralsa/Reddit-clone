@@ -2,21 +2,19 @@ package firebase
 
 import (
 	"context"
-	"fmt"
-	"log"
-	"os"
-
 	firebase "firebase.google.com/go/v4"
 	storage "firebase.google.com/go/v4/storage"
+	"fmt"
 	"github.com/joho/godotenv"
 	"google.golang.org/api/option"
+	"log"
 )
 
 //Load .env vars
 var err = godotenv.Load()
 
 var config = &firebase.Config{
-	StorageBucket: os.Getenv("BUCKET_NAME") + ".appspot.com",
+	StorageBucket: "mastery-69380.appspot.com",
 }
 var opt = option.WithCredentialsFile("serviceAccountKey.json")
 

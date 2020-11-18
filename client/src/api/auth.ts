@@ -2,7 +2,7 @@ import { ISignUpData, ILoginData } from "../interfaces/global_interfaces";
 import jwtDecode from "jwt-decode";
 
 export async function signUpApi(user: ISignUpData) {
-  const url = `${process.env.REACT_APP_API_URL}/sign-up`
+  const url = `/api/sign-up`
 
   const userTemp = {
     ...user,
@@ -30,7 +30,7 @@ export async function signUpApi(user: ISignUpData) {
 }
 
 export async function loginApi(user: ILoginData) {
-  const url = `${process.env.REACT_APP_API_URL}/login`
+  const url = `/api/login`
 
   const userTemp = {
     ...user,

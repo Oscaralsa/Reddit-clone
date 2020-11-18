@@ -15,28 +15,29 @@ import (
 func Handlers() {
 	router := mux.NewRouter()
 
-	router.HandleFunc("/sign-up", middlewares.CheckDB(routers.Signup)).Methods("POST")
-	router.HandleFunc("/login", middlewares.CheckDB(routers.Login)).Methods("POST")
+	router.HandleFunc("/api/sign-up", middlewares.CheckDB(routers.Signup)).Methods("POST")
+	router.HandleFunc("/api/login", middlewares.CheckDB(routers.Login)).Methods("POST")
 
-	router.HandleFunc("/profile", middlewares.CheckDB(routers.GetProfile)).Methods("GET")
-	router.HandleFunc("/profile", middlewares.CheckDB(middlewares.CheckJWT(routers.UpdateProfile))).Methods("PUT")
+	router.HandleFunc("/api/profile", middlewares.CheckDB(routers.GetProfile)).Methods("GET")
+	router.HandleFunc("/api/profile", middlewares.CheckDB(middlewares.CheckJWT(routers.UpdateProfile))).Methods("PUT")
 
-	router.HandleFunc("/post", middlewares.CheckDB(middlewares.CheckJWT(routers.PostPost))).Methods("POST")
-	router.HandleFunc("/post", middlewares.CheckDB(routers.GetAllPost)).Methods("GET")
-	router.HandleFunc("/post-profile", middlewares.CheckDB(middlewares.CheckJWT(routers.GetPostProfile))).Methods("GET")
-	router.HandleFunc("/post-profile", middlewares.CheckDB(middlewares.CheckJWT(routers.DeletePostProfile))).Methods("DELETE")
-	router.HandleFunc("/post-follow", middlewares.CheckDB(middlewares.CheckJWT(routers.GetFollowPost))).Methods("GET")
+	router.HandleFunc("/api/post", middlewares.CheckDB(middlewares.CheckJWT(routers.PostPost))).Methods("POST")
+	router.HandleFunc("/api/post", middlewares.CheckDB(routers.GetAllPost)).Methods("GET")
+	router.HandleFunc("/api/post-profile", middlewares.CheckDB(middlewares.CheckJWT(routers.GetPostProfile))).Methods("GET")
+	router.HandleFunc("/api/post-profile", middlewares.CheckDB(middlewares.CheckJWT(routers.DeletePostProfile))).Methods("DELETE")
+	router.HandleFunc("/api/post-follow", middlewares.CheckDB(middlewares.CheckJWT(routers.GetFollowPost))).Methods("GET")
 
 	//Upload files
-	router.HandleFunc("/avatar", middlewares.CheckDB(middlewares.CheckJWT(routers.UploadAvatar))).Methods("POST")
+	router.HandleFunc("/api/avatar", middlewares.CheckDB(middlewares.CheckJWT(routers.UploadAvatar))).Methods("POST")
 
 	//Follows
-	router.HandleFunc("/follow", middlewares.CheckDB(middlewares.CheckJWT(routers.PostFollow))).Methods("POST")
-	router.HandleFunc("/follow", middlewares.CheckDB(middlewares.CheckJWT(routers.DeleteFollow))).Methods("DELETE")
-	router.HandleFunc("/follow-status", middlewares.CheckDB(middlewares.CheckJWT(routers.GetOneFollow))).Methods("GET")
+	router.HandleFunc("/api/follow", middlewares.CheckDB(middlewares.CheckJWT(routers.PostFollow))).Methods("POST")
+	router.HandleFunc("/api/follow", middlewares.CheckDB(middlewares.CheckJWT(routers.DeleteFollow))).Methods("DELETE")
+	router.HandleFunc("/api/follow-status", middlewares.CheckDB(middlewares.CheckJWT(routers.GetOneFollow))).Methods("GET")
 
-	router.HandleFunc("/all-users", middlewares.CheckDB(middlewares.CheckJWT(routers.GetAllUsers))).Methods("GET")
+	router.HandleFunc("/api/all-users", middlewares.CheckDB(middlewares.CheckJWT(routers.GetAllUsers))).Methods("GET")
 
+	router.PathPrefix("/").Handler(http.StripPrefix("/", http.FileServer(http.Dir("./web"))))
 	PORT := os.Getenv("PORT")
 	if PORT == "" {
 		PORT = "8080"

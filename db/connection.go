@@ -2,10 +2,10 @@ package db
 
 import (
 	"context"
+	"github.com/joho/godotenv"
 	"log"
 	"os"
 
-	"github.com/joho/godotenv"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
@@ -13,7 +13,6 @@ import (
 /*MongoCN store the Client mongo object in a var */
 var MongoCN = ConnectDB()
 
-//Load .env vars
 var err = godotenv.Load()
 
 var databasePass = os.Getenv("DATABASE_PASS")

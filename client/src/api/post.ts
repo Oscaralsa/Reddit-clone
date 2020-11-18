@@ -1,5 +1,5 @@
 export async function getAllPostApi(page: number) {
-  const url = `${process.env.REACT_APP_API_URL}/post?page=${page}`
+  const url = `/api/post?page=${page}`
   
   const params = {
     method: "GET",
