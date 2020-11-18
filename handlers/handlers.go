@@ -37,7 +37,7 @@ func Handlers() {
 
 	router.HandleFunc("/api/all-users", middlewares.CheckDB(middlewares.CheckJWT(routers.GetAllUsers))).Methods("GET")
 
-	router.PathPrefix("/").Handler(http.StripPrefix("/", http.FileServer(http.Dir("./web"))))
+	router.PathPrefix("/").Handler(http.StripPrefix("/", http.FileServer(http.Dir("clint/build"))))
 	PORT := os.Getenv("PORT")
 	if PORT == "" {
 		PORT = "8080"
