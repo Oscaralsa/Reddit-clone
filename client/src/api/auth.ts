@@ -10,6 +10,7 @@ export async function signUpApi(user: ISignUpData) {
     user_name: user.user_name.toLowerCase()
   }
 
+  console.log(userTemp)
   const params = {
     method: "POST",
     headers: {
@@ -21,7 +22,7 @@ export async function signUpApi(user: ISignUpData) {
   try {
     const response = await fetch(url, params);
     if (response.status === 201){
-      return "Done"
+      return "User created, please login"
     }
     return response.text();
   } catch (err) {

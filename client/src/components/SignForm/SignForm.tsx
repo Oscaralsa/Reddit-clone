@@ -62,7 +62,7 @@ function SignForm(props: ISignUpFormProps) {
       signUpData.password.length >= 6
     ) {
       const response = await signUpApi(signUpData);
-      setUser(getUserData(response), response)
+      alert(response)
       setShowModal(false);
       
     }

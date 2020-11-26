@@ -34,19 +34,17 @@
     .btn-primary {
       color: #fff;
       background-color: white;
-      color: black;
       font-weight: 600;
       border-color: white;
     }
+
     .btn-primary.focus,
     .btn-primary:focus {
       color: #fff;
       background-color: white;
-      color: black;
       font-weight: 600;
-      box-shadow: 1px solid green !important;
+      box-shadow: 1px 1px 1px 1px green !important;
       border: 1px solid rgb(237, 239, 241);
-      border-color: white;
     }
 
     .svg-inline--fa {
@@ -63,7 +61,6 @@
     .btn-primary:not(:disabled):not(.disabled).active,
     .btn-primary:not(:disabled):not(.disabled):active,
     .show > .btn-primary.dropdown-toggle {
-      color: #fff;
       background-color: white;
       color: black;
       font-weight: 600;
@@ -75,6 +72,7 @@
     .show > .btn-primary.dropdown-toggle:focus {
       box-shadow: 0 0 0 0.08rem rgb(237, 239, 241);
     }
+
 
     padding: 10px;
     display: flex;
@@ -89,7 +87,6 @@
   &__user__section {
     &__dropdown {
       .btn-primary {
-        color: #fff;
         background-color: white;
         color: black;
         font-weight: 600;
@@ -97,13 +94,11 @@
       }
       .btn-primary.focus,
       .btn-primary:focus {
-        color: #fff;
         background-color: white;
         color: black;
         font-weight: 600;
-        box-shadow: 1px solid green !important;
+        box-shadow: 1px 1px 1px 1px green !important;
         border: 1px solid rgb(237, 239, 241);
-        border-color: white;
       }
 
       .svg-inline--fa {
@@ -172,7 +167,7 @@
     border: 1px solid #e7e7e7;
     flex: 1;
     min-width: 60px;
-    max-width: 650px;
+    max-width: 1000px;
     height: 5vh;
 
     .svg-inline--fa {
@@ -189,7 +184,6 @@
       background-color: #f8f8f8;
       padding: -10px;
       font-size: 13px;
-      width: 100%;
     }
 
     input:focus {
@@ -267,6 +261,13 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.btn-outline-primary:hover {
+  color: #007bff !important;
+  background-color: #fff !important;
+  border-color: #007bff !important;
+}
+
 @media screen and (max-width: 1000px) {
   .profile__select .profile__details .user__profile {
     display: none;
@@ -282,7 +283,10 @@
 @media screen and (max-width: 700px) {
   .icons__left {
     display: none;
-  } 
+  }
+  .header__input__section{
+    display: none;
+  }
   button.header__user__section__buttons__only.btn.btn-primary{
     display: none;
   }
@@ -298,14 +302,11 @@
   .header .header__logo h4 {
     display: none;
   }
-}
-
-@media screen and (max-width: 500px) {
   .header__input__section{
     display: none;
   }
-  
 }
+
 @media screen and (max-width: 460px) {
   .header .header__logo span {
     display: none;
