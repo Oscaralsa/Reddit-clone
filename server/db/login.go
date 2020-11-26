@@ -5,7 +5,7 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
-func Login(email string, user_name string, password string) (models.User, bool) {
+func Login(user_name string, password string) (models.User, bool) {
 	user, login, _, _ := CheckUserExist("", user_name)
 	if login == false {
 		return user, false

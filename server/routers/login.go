@@ -23,7 +23,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "USERNAME_REQUIRED", 400)
 		return
 	}
-	doc, exists := db.Login("", t.User_Name, t.Password)
+	doc, exists := db.Login(t.User_Name, t.Password)
 	if exists == false {
 		http.Error(w, "INCORRECT_USER_OR_PASSWORD 1", 400)
 		return
