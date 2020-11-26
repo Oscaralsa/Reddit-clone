@@ -1,4 +1,4 @@
-import { ISignUpData, ILoginData } from "../interfaces/global_interfaces";
+import { ISignUpData, ILoginData, IJsonWebToken } from "../interfaces/global_interfaces";
 import jwtDecode from "jwt-decode";
 
 export async function signUpApi(user: ISignUpData) {
@@ -82,7 +82,7 @@ export function isUserLogged(): {} {
 }
 
 function isExpired(token: string) {
-  const { exp } = jwtDecode(token);
+  const { exp } = jwtDecode<IJsonWebToken>(token);
   const expired = exp * 1000;
   const timeout = expired - Date.now();
 
@@ -91,7 +91,7 @@ function isExpired(token: string) {
 }
 
 export function getUserData(token: (string) ){
-  const { user_name, email, avatar, biography } = jwtDecode(token);
+  const { user_name, email, avatar, biography }: any = jwtDecode<IJsonWebToken>(token);
 
   return { user_name, email, avatar, biography };
 }

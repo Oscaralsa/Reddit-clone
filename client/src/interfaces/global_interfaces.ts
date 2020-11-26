@@ -15,6 +15,18 @@ export interface ILoginData {
   password: string;
 }
 
+export interface IJsonWebToken {
+  email: string,
+  user_name: string,
+  birth_date: string,
+  biography: string,
+  ubication: string,
+  avatar: string,
+  web_url: string,
+  _id: string,
+  exp: number,
+}
+
 export interface IBasicPostData {
   body: string;
   date: string;
@@ -41,10 +53,10 @@ export interface ISetUser {
   setUser: (user: any, token: string) => {
     type: string;
     payload: {
-        user: any;
-        token: any;
+      user: any;
+      token: any;
     };
-}
+  }
 }
 
 export interface IDispatch {
